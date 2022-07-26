@@ -28,5 +28,10 @@ module.exports = [
     "docId": "tool/cli",
     "label": "工具 & 其他",
     "position": "left"
-  }
+  },
+  {
+    to: 'api',
+    label: 'API',
+    position: 'left',
+  },
 ]
