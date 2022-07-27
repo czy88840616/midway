@@ -3,7 +3,6 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const path = require('path');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -25,7 +24,7 @@ const config = {
     [
       'docusaurus-plugin-typedoc-api',
       {
-        projectRoot: path.join(__dirname, '../'),
+        projectRoot: `${__dirname}/..`,
         changelogs: true,
         packages: [
           'packages',
