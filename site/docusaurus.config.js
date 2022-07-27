@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const path = require('path');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -20,7 +21,29 @@ const config = {
     defaultLocale: 'zh-cn',
     locales: ['zh-cn', 'en'],
   },
-  plugins: ['./lib/plugin.js'],
+  plugins: [
+    [
+      'docusaurus-plugin-typedoc-api',
+      {
+        projectRoot: path.join(__dirname, '../'),
+        changelogs: true,
+        packages: [
+          'packages',
+          'packages-serverless'
+        ],
+        typedocOptions: {
+          readme: 'none',
+          tsconfig: './tsconfig.json',
+          excludeExternals: true,
+          excludePrivate: true,
+          excludeProtected: true,
+          excludeInternal: true,
+          externalPattern: '**/node_modules/*',
+          cleanOutputDir: true,
+        },
+      },
+    ],
+  ],
   presets: [
     [
       'classic',
