@@ -33,7 +33,7 @@ const config = {
         ],
         typedocOptions: {
           readme: 'none',
-          tsconfig: './tsconfig.json',
+          tsconfig: '../tsconfig.json',
           excludeExternals: true,
           excludePrivate: true,
           excludeProtected: true,
